@@ -14,15 +14,14 @@ function setup() {
 	mic.start();
 	fft = new p5.FFT(0, 32);
 	fft.setInput(mic);
-
-	if (getAudioContext().state !== 'running') {
-    	getAudioContext().resume();
-    }
 }
 k = 0;
 var mid = 253, up = 20, rigth = 150, left = 200, down = 220;
 var aliqCounter = 0;
 function draw() {	
+	if (getAudioContext().state !== 'running') {
+	    getAudioContext().resume();
+	  }
 	var spectrum = fft.analyze();
 	for(var i in spectrum)
 	{			
@@ -97,18 +96,6 @@ function draw() {
 	for(var i in aliqArr)
 	{
 		aliqArr[i].show();
-	}
-}
-var stop = false;
-function _mousePressed(){
-	if(!stop){
-		sound.pause();
-		stop = true;
-	}
-	else
-	{
-		stop = false;
-		sound.loop();
 	}
 }
 // function mouseDragged()
