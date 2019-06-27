@@ -17,6 +17,7 @@ function setup() {
 
 	if (getAudioContext().state !== 'running') {
     	getAudioContext().resume();
+    }
 }
 k = 0;
 var mid = 253, up = 20, rigth = 150, left = 200, down = 220;
