@@ -14,6 +14,7 @@ function setup() {
 	mic.start();
 	fft = new p5.FFT(0, 32);
 	fft.setInput(mic);
+	console.log(1);
 }
 k = 0;
 var mid = 253, up = 20, rigth = 150, left = 200, down = 220;
